@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1 class="rounded p-2 m-4 bg-info text-white text-center text-uppercase w-50">Articles available</h1>
+        </div>
+        <table class="table bg-light">
+            <thead class="bg-info text-light text-uppercase">
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">name</th>
+                    <th scope="col">price</th>
+                    <th scope="col">quantity</th>
+                    <th scope="col">action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                {% for article in articles %}
+                <tr>
+                    <th>{{ article.id }}</th>
+                    <td>{{ article.name }}</td>
+                    <td>{{ article.price }}</td>
+                    <td>{{ article.quantity }}</td>
+                    <td><a class="edit" href="article-edit.php">Modifier</a><a class="delete" href="article-delete.php">Supprimer</a></td>
+                </tr>
+                {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <a href="article-new.php" class="rounded p-2 m-4 bg-info text-white">Add an article</a>
+        </p>
+    </div>
+</body>
+</html>
